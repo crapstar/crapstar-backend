@@ -2,8 +2,10 @@
 # yarn lockfile v1
 
 
-"@crapstar/crapstar-dal@../crapstar-dal":
+"@crapstar/crapstar-dal@^0.0.0":
   version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@crapstar/crapstar-dal/-/crapstar-dal-0.0.0.tgz#eccb780df55eb61a356cde58cfbb8caa6bac142c"
+  integrity sha512-LiQARpEJoUdMNBDk7Iu4dLCKIOAzSBJjmtXOyPghgXzMBTAHCUe3TLBZEt6rGbnG48LJrYYchs1fHW3aC4MwFw==
   dependencies:
     sequelize "^6.27.0"
 

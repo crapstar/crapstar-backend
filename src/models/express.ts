@@ -1,4 +1,5 @@
 import express from "express";
+import { Movie } from "./models";
 
 export declare namespace Express {
   export interface Request extends express.Request {}
@@ -16,3 +17,9 @@ export interface IGenericErrorResponse<T extends ErrorMessage> {
 export type IGenericOkResponse = {
   status: "ok";
 };
+
+export type GetMovieResponse =
+  | (IGenericOkResponse & {
+      movie: Movie;
+    })
+  | IGenericErrorResponse<"not-found" | "invalid-data">;

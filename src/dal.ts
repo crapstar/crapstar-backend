@@ -1,5 +1,11 @@
+import dotenv from "dotenv";
+
 import { Dal } from "@crapstar/crapstar-dal";
 import { getEnvValue } from "./utils/config";
+
+dotenv.config({
+  ...(process.env.NODE_ENV === "development" && { path: ".env.dev" }),
+});
 
 const dal = new Dal({
   port: getEnvValue("MAIN_DB_PORT", "number"),

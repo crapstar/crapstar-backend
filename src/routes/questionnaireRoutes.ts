@@ -6,6 +6,7 @@ import { Express } from "../models/express";
 const router = Router();
 
 const getQuestionnaire = async (req: Express.Request) => {
+  console.log(req);
   return {
     status: "ok",
     word: "NICE",

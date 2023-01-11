@@ -11,10 +11,12 @@
     "start": "ts-node src/app.ts",
     "dev": "concurrently --kill-others-on-fail \"NODE_ENV=development nodemon --delay .5  build/src/app.js\"",
     "watch": "node_modules/typescript/bin/tsc -p . -w",
+    "prebuild": "rm -rf build",
     "build": "node_modules/typescript/bin/tsc -p node_modules/typescript/bin/tsc -p ."
   },
   "dependencies": {
-    "@crapstar/crapstar-dal": "^0.0.0",
+    "@crapstar/crapstar-dal": "^0.13.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "sqlite": "^4.1.2"
   },

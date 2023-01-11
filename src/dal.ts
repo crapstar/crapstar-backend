@@ -2,13 +2,13 @@ import { Dal } from "@crapstar/crapstar-dal";
 import { getEnvValue } from "./utils/config";
 
 const dal = new Dal({
-  port: getEnvValue("MAIN_DB_POST", "number"),
+  port: getEnvValue("MAIN_DB_PORT", "number"),
   database: getEnvValue("MAIN_DB_DATABASE", "string"),
   replication: {
     write: {
       host: getEnvValue("MAIN_DB_HOST", "string"),
     },
-    read: getEnvValue("MAIN_DB_READ_HOSTS", "string")
+    read: getEnvValue("MAIN_DB_READ_HOST", "string")
       ?.split(",")
       .map((s) => ({
         host: s,

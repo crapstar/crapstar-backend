@@ -7,6 +7,7 @@ import dal from "../dal";
 const router = Router();
 
 const getMovie = async (req: Express.Request) => {
+  console.group(req);
   // TODO get movie from lambda
 
   const movie = await dal.Movie.findByPk(1);

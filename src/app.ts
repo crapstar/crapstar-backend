@@ -1,18 +1,16 @@
 import express from "express";
 
-import questionnaireRoutes from "./routes/questionnaireRoutes";
+import { getEnvValue } from "./utils/config";
+
+import emotionRoutes from "./routes/emotionRoutes";
 import movieRoutes from "./routes/movieRoutes";
 
 const app = express();
-const port = 3000;
+const port = getEnvValue("PORT", "number");
 
-// Routes:
-// Questions endpoint
-// Movie endpoint
-
-app.use("/questionnaire", questionnaireRoutes);
+app.use("/emotion", emotionRoutes);
 app.use("/movie", movieRoutes);
 
 app.listen(port, () => {
-  console.log(`Example app listening on ports ${port}`);
+  console.log(`App listening on port ${port}`);
 });
